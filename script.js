@@ -7,14 +7,27 @@ function createGrid(num) {
         cell.classList.add('cell');
         container.appendChild(cell);
     }
+    colorChange();
 }
 
-createGrid(16);
+function colorChange() {
+    let cells = document.querySelectorAll('.cell');
 
-let cells = document.querySelectorAll('.cell');
-
-cells.forEach(x => {
-    x.addEventListener('mouseenter', (e) => {
-        x.classList.add('color');
+    cells.forEach(x => {
+        x.addEventListener('mouseenter', (e) => {
+            x.classList.add('color');
+        })
     })
+}
+
+createGrid(16); /* starts page with 16x16 grid */
+
+let button = document.querySelector('button');
+
+button.addEventListener('click', (e) => {
+    let container = document.querySelector('.container');
+    container.replaceChildren();
+    let gridSize = prompt('Enter a grid size no more than 100: ');
+    createGrid(gridSize);
+    colorChange();
 })
