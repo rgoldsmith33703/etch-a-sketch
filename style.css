@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    max-width: 90vh; max-height: 90vw; /*keeps grid within viewport */
+}
+
+.cell {
+    width: 100%; height: 0; padding-bottom: 100%;  /* keeps grid a perfect square */
+    background-color: white;
+    border: .25px solid lightgray;
+}
+
